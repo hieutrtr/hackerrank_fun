@@ -1,0 +1,4 @@
+- pile of socks must be paired by color.
+- sock_color int[]
+- input is n and n-sized array of integers
+- purpose is finding pair of elements and count how many pair matched.
