@@ -13,12 +13,16 @@ fn main() {
 
     println!("_n :{}", _n);
     println!("_socks : {:?}", _socks);
+    let mut skips = Vec::new();
     let mut count = 0;
     for (i, s1) in _socks.iter().enumerate() {
-        for (j, s2) in _socks.iter().enumerate().skip(i+1) {
-            if s1 == s2 {
-                count+=1;
-                break;
+        if !skips.contains(&i) {
+            for (j, s2) in _socks.iter().enumerate().skip(i+1) {
+                if s1 == s2 {
+                    count+=1;
+                    skips.push(j);
+                    break;
+                }
             }
         }
     }
